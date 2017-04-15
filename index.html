@@ -1,0 +1,13 @@
+---
+layout: default
+title: Test of Jekyll
+---
+
+<div id="home">
+  <h1>Sites</h1>
+  <ul class="sites">
+    {% for link in site.data.links %}
+      <li><a href="{{link.url}}">{{link.name}}</a> &mdash; {{link.desc}}</li>
+    {% endfor %}
+  </ul>
+</div>
