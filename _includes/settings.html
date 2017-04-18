@@ -13,7 +13,7 @@
 				{% if site.github.url == nil or site.github.url == blank %}
 					{% assign link = lang.link %}
 				{% else %}
-					{% assign link = site.github.url | append: '/' | append: lang.link %}
+					{% assign link = site.github.url | append: lang.link %}
 				{% endif %}
 
 				<li class="slds-dropdown__item" role="presentation">
