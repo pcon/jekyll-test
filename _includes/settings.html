@@ -10,8 +10,14 @@
 			{% for lang_key in site.data.site.langs %}
 				{% assign lang = site.data.langs[lang_key] %}
 
+				{% if site.github.url == nil or site.github.url == blank %}
+					{% assign link = lang.link %}
+				{% else %}
+					{% assign link = site.github.url | append: '/' | append: lang.link %}
+				{% endif %}
+
 				<li class="slds-dropdown__item" role="presentation">
-					<a href="{{ lang.link }}" role="menuitem" tabindex="0">
+					<a href="{{ link }}" role="menuitem" tabindex="0">
 						<span class="slds-truncate">{{ lang.name }}</span>
 					</a>
 				</li>
