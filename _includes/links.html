@@ -1,0 +1,45 @@
+<div class="fullwidth">
+	<div class="slds-col slds-size--1-of-1 slds-p-horizontal--small">
+		{% if site.data.site.maintitle[page.lang] == nil or site.data.site.maintitle[page.lang] == nil %}
+			{% assign maintitle = site.data.site.maintitle[site.data.site.default_lang] %}
+		{% else %}
+			{% assign maintitle = site.data.site.maintitle[page.lang] %}
+		{% endif %}
+
+		{% if site.data.site.description[page.lang] == nil or site.data.site.description[page.lang] == nil %}
+			{% assign description = site.data.site.description[site.data.site.default_lang] %}
+		{% else %}
+			{% assign description = site.data.site.description[page.lang] %}
+		{% endif %}
+
+		<div class="slds-text-heading--large slds-m-bottom--large">{{ maintitle }}</div>
+		<div class="slds-text-longform">{{ description }}</div>
+
+		{% for section in site.data.site.sections %}
+			{% if site.data[section].title[page.lang] == nil or site.data[section].title[page.lang] == blank %}
+				{% assign section_title = site.data[section].title[site.data.site.default_lang] %}
+			{% else %}
+				{% assign section_title = site.data[section].title[page.lang] %}
+			{% endif %}
+			<h3 class="slds-section-title--divider slds-m-bottom--small slds-m-top--large">{{ section_title }}</h3>
+
+			{% assign links = site.data[section].links %}
+
+			<ul class="slds-has-block-links--space">
+				{% for link_translations in links %}
+					<li>
+						{% if link_translations[page.lang] == nil or link_translations[page.lang] == blank %}
+							{% assign link = link_translations[site.data.site.default_lang] %}
+						{% else %}
+							{% assign link = link_translations[page.lang] %}
+						{% endif %}
+
+						<a href="{{ link.url }}">{{ link.name }}</a>
+						<p class="slds-p-left--large">{{ link.desc }}</p>
+					</li>
+
+				{% endfor %}
+			</ul>
+		{% endfor %}
+	</div>
+</div>

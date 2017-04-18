@@ -1,26 +1,7 @@
 ---
 layout: default
 title: Test of Jekyll
+lang: en
 ---
 
-<div class="fullwidth">
-	<div class="slds-col slds-size--1-of-1 slds-p-horizontal--small">
-		<div class="slds-text-heading--large slds-m-bottom--large">{{ site.data.site.maintitle }}</div>
-
-		<div class="slds-text-longform">{{ site.data.site.description }}</div>
-
-		{% for section in site.data.site.sections %}
-			<h3 class="slds-section-title--divider slds-m-bottom--small slds-m-top--large">{{ site.data[section].title }}</h3>
-			{% assign links = site.data[section].links %}
-
-			<ul class="slds-has-block-links--space">
-				{% for link in links %}
-					<li>
-						<a href="{{ link.url }}">{{ link.name }}</a>
-						<p class="slds-p-left--large">{{ link.desc }}</p>
-					</li>
-				{% endfor %}
-			</ul>
-		{% endfor %}
-	</div>
-</div>
+{% include links.html %}

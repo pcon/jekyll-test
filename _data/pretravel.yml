@@ -1,5 +1,12 @@
-title: Before You Travel
+title:
+     - en: Before You Travel
+       es: Antes de que viajes
 links:
-     - name: Google
-       url: https://google.com
-       desc: This is the googles.  You should know what it is
+     - en:
+          name: Google
+          url: https://google.com
+          desc: This is the googles.  You should know what it is
+       es:
+          name: Google
+          url: https://google.com
+          desc: Este es el googles. Usted debe saber lo que es

@@ -1,10 +1,22 @@
-maintitle: This is a Jekyll test page
-description: |
-     <p>Copy text goes here.  It can be on a single line or, it can go over mutliple lines.</p>
-      <p>Since we're rendering this out as text you need to use the &lt;/p&gt; syntax to specify paragraphs</p>
+maintitle:
+     en: This is a Jekyll test page
+     es: Esta es una página de prueba de Jekyll
+description:
+     en: |
+          <p>Copy text goes here.  It can be on a single line or, it can go over mutliple lines.</p>
+           <p>Since we're rendering this out as text you need to use the &lt;/p&gt; syntax to specify paragraphs</p>
+     es: |
+          <p>Copiar texto va aquí. Puede estar en una sola línea o, puede ir sobre líneas mutliple. </p>
+           <p>Puesto que estamos procesando esto como texto, debes usar el comando &lt;/p&gt; Sintaxis para especificar párrafos </p>
 
 sections:
      - pretravel
      - travel
      - transportation
      - city
+
+default_lang: en
+
+langs:
+     - en
+     - es
