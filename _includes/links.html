@@ -36,8 +36,8 @@
 							{% assign link = link_translations[page.lang] %}
 						{% endif %}
 
-						<a href="{{ link.url }}">{{ link.name }}</a>
-						<p class="slds-p-left--large">{{ link.desc }}</p>
+						<a style="display: inline !important;" href="{{ link.url }}">{{ link.name }}</a>
+						<p class="slds-p-left--large slds-p-top--xx-small">{{ link.desc }}</p>
 					</li>
 
 				{% endfor %}
