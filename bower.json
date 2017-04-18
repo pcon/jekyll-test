@@ -1,0 +1,21 @@
+{
+  "name": "jekyll-test",
+  "homepage": "https://github.com/pcon/jekyll-test",
+  "authors": [
+    "Patrick Connelly <patrick@deadlypenguin.com>"
+  ],
+  "description": "A test application for jekyll",
+  "main": "",
+  "license": "GPLv3",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "salesforce-lightning-design-system": "^2.2.2"
+  }
+}

@@ -1,5 +1,3 @@
-name: Your New Jekyll Site
+name: Test Jekyll Site
 markdown: redcarpet
 highlighter: rouge
-
-theme: jekyll-theme-tactile
