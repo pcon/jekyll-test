@@ -1,4 +1,5 @@
 <div class="fullwidth">
+	{% include settings.html %}
 	<div class="slds-col slds-size--1-of-1 slds-p-horizontal--small">
 		{% if site.data.site.maintitle[page.lang] == nil or site.data.site.maintitle[page.lang] == nil %}
 			{% assign maintitle = site.data.site.maintitle[site.data.site.default_lang] %}

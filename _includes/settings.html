@@ -1,0 +1,21 @@
+<div class="slds-dropdown-trigger slds-dropdown-trigger--click slds-float--right slds-m-right--large" id="lang_wrapper">
+	<button class="slds-button slds-button--icon-container" aria-haspopup="true" title="languages" id="lang_button">
+		<svg class="slds-button__icon" aria-hidden="true">
+			<use xlink:href="{{ site.github.url }}/bower_components/salesforce-lightning-design-system/assets/icons/utility-sprite/svg/symbols.svg#settings"></use>
+		</svg>
+		<span class="slds-assistive-text">Languages</span>
+	</button>
+	<div class="slds-dropdown slds-dropdown--right slds-nubbin--top-right">
+		<ul class="slds-dropdown__list" role="menu">
+			{% for lang_key in site.data.site.langs %}
+				{% assign lang = site.data.langs[lang_key] %}
+
+				<li class="slds-dropdown__item" role="presentation">
+					<a href="{{ lang.link }}" role="menuitem" tabindex="0">
+						<span class="slds-truncate">{{ lang.name }}</span>
+					</a>
+				</li>
+			{% endfor %}
+		</ul>
+	</div>
+</div>
