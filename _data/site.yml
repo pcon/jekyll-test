@@ -8,6 +8,13 @@ description:
      es: |
           <p>Copiar texto va aquí. Puede estar en una sola línea o, puede ir sobre líneas mutliple. </p>
            <p>Puesto que estamos procesando esto como texto, debes usar el comando &lt;/p&gt; Sintaxis para especificar párrafos </p>
+footer:
+     preamble:
+          en: Got corrections, additions or bugs?
+          es: ¿Tiene correcciones, adiciones o errores?
+     link:
+          en: Let us know!
+          es: ¡Haznos saber!
 
 sections:
      - pretravel

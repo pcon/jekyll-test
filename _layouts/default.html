@@ -14,9 +14,21 @@
 			{{ content }}
 		</article>
 
+		{% if site.data.site.footer.preamble[page.lang] == nil or site.data.site.footer.preamble[page.lang] == nil %}
+			{% assign footer_preamble = site.data.site.footer.preamble[site.data.site.default_lang] %}
+		{% else %}
+			{% assign footer_preamble = site.data.site.footer.preamble[page.lang] %}
+		{% endif %}
+
+		{% if site.data.site.footer.link[page.lang] == nil or site.data.site.footer.link[page.lang] == nil %}
+			{% assign footer_link = site.data.site.footer.link[site.data.site.default_lang] %}
+		{% else %}
+			{% assign footer_link = site.data.site.footer.link[page.lang] %}
+		{% endif %}
+
 		<footer class="slds-p-around--large slds-m-top--large slds-border--top slds-theme--alt-inverse">
 			<div class="slds-grid slds-grid--align-spread">
-				<p>Got corrections, additions or bugs? <a href="{{ site.github.repository_url }}">Let us know!</a></p>
+				<p>{{ footer_preamble }} <a href="{{ site.github.repository_url }}">{{ footer_link }}</a></p>
 			</div>
 		</footer>
 	</body>
