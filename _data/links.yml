@@ -1,7 +1,0 @@
-- name: Google
-  url: https://google.com
-  desc: This is the googles.  You should know what it is
-
-- name: Yahoo
-  url: https://yahoo.com
-  desc: A site that Google allows to hang around
