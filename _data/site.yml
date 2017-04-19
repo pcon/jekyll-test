@@ -16,6 +16,19 @@ footer:
           en: Let us know!
           es: ¡Haznos saber!
 
+opengraph:
+     en:
+          title: Test Jekyll site
+          desc: This is a Jekyll test page
+          image: /images/opengraph_large.png
+     es:
+          title: Prueba de Jekyll
+          desc: Esta es una página de prueba de Jekyll
+
+twitter:
+     en:
+          image: /images/twitter_large.png
+
 sections:
      - pretravel
      - travel

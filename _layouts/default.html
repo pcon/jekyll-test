@@ -8,19 +8,64 @@
 
 		<link rel="stylesheet" type="text/css" href="{{ site.github.url }}/bower_components/salesforce-lightning-design-system/assets/styles/salesforce-lightning-design-system.css" />
 		<link rel="stylesheet" type="text/css" href="{{ site.github.url }}/css/main.css" />
+
+		<link rel="icon" type="image/x-icon" href="{{ site.github.url }}/images/favicon.ico" />
+		<link rel="icon" type="image/png" href="{{ site.github.url }}/images/favicon.png" />
+		<link rel="icon" type="image/gif" href="{{ site.github.url }}/images/favicon.gif" />
+		<link rel="icon" type="image/png" href="/favicon_16x16.png" sizes="16x16">
+		<link rel="icon" type="image/png" href="/favicon_32x32.png" sizes="32x32">
+		<link rel="apple-touch-icon-precomposed" href="/logo_114x114.png" sizes="114x114" />
+		<link rel="apple-touch-icon-precomposed" href="/logo_72x72.png" sizes="72x72" />
+		<link rel="apple-touch-icon-precomposed" href="/logo_57x57" />
+
+		{% if site.data.site.opengraph[page.lang].title == nil or site.data.site.opengraph[page.lang].title == blank %}
+			{% assign opengraph_title = site.data.site.opengraph[site.data.site.default_lang].title %}
+		{% else %}
+			{% assign opengraph_title = site.data.site.opengraph[page.lang].title %}
+		{% endif %}
+
+		{% if site.data.site.opengraph[page.lang].desc == nil or site.data.site.opengraph[page.lang].desc == blank %}
+			{% assign opengraph_desc = site.data.site.opengraph[site.data.site.default_lang].desc %}
+		{% else %}
+			{% assign opengraph_desc = site.data.site.opengraph[page.lang].desc %}
+		{% endif %}
+
+		{% if site.data.site.opengraph[page.lang].image == nil or site.data.site.opengraph[page.lang].image == blank %}
+			{% assign opengraph_image = site.data.site.opengraph[site.data.site.default_lang].image %}
+		{% else %}
+			{% assign opengraph_image = site.data.site.opengraph[page.lang].image %}
+		{% endif %}
+
+		{% if site.data.site.twitter[page.lang].image == nil or site.data.site.twitter[page.lang].image == blank %}
+			{% assign twitter_image = site.data.site.twitter[site.data.site.default_lang].image %}
+		{% else %}
+			{% assign twitter_image = site.data.site.twitter[page.lang].image %}
+		{% endif %}
+
+		<meta property="og:url"                content="{{ site.github.url }}{{ page.url }}" />
+		<meta property="og:type"               content="article" />
+		<meta property="og:title"              content="{{ opengraph_title }}" />
+		<meta property="og:description"        content="{{ opengraph_desc }}" />
+		<meta property="og:image"              content="{{ site.github.url }}{{ opengraph_image }}" />
+
+		<meta name="twitter:card" content="summary_large_image">
+		<meta name="twitter:title" content="{{ opengraph_title }}">
+		<meta name="twitter:description" content="{{ opengraph_desc }}">
+		<meta name="twitter:image" content="{{ site.github.url }}{{ twitter_image }}">
+
 	</head>
 	<body>
 		<article class="slds-grid slds-wrap slds-p-bottom--small slds-p-top--medium">
 			{{ content }}
 		</article>
 
-		{% if site.data.site.footer.preamble[page.lang] == nil or site.data.site.footer.preamble[page.lang] == nil %}
+		{% if site.data.site.footer.preamble[page.lang] == nil or site.data.site.footer.preamble[page.lang] == blank %}
 			{% assign footer_preamble = site.data.site.footer.preamble[site.data.site.default_lang] %}
 		{% else %}
 			{% assign footer_preamble = site.data.site.footer.preamble[page.lang] %}
 		{% endif %}
 
-		{% if site.data.site.footer.link[page.lang] == nil or site.data.site.footer.link[page.lang] == nil %}
+		{% if site.data.site.footer.link[page.lang] == nil or site.data.site.footer.link[page.lang] == blank %}
 			{% assign footer_link = site.data.site.footer.link[site.data.site.default_lang] %}
 		{% else %}
 			{% assign footer_link = site.data.site.footer.link[page.lang] %}
